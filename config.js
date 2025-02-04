@@ -1,10 +1,10 @@
 
 
 module.exports = {
-  TOKEN: "MTI5NTcyMjc2NDYyMzI4NjMyNg.Gh_9sw.vv59bZrH4x195iADjeNYcjSCQZwK-ico3WSWUk",
+  TOKEN: "",
   language: "en",
   ownerID: ["968563794974478366", ""], 
-  mongodbUri : "mongodb + sv://aswayzbot:alkhal3297@musicbotyt.ouljywv.mongodb.net/?retryWrites=true&w=majority",
+  mongodbUri : "mongodb + sv://aswayzbot:alkhal3297@aswayzbot.ouljywv.mongodb.net/?retryWrites=true&w=majority",
   setupFilePath: './commands/setup.json',
   commandsDir: './commands',  
   embedColor: "#1db954",
