@@ -1,5 +1,5 @@
 module.exports = {
-    footer: "SSRR تم التطوير بواسطة | Prime Music v1.2",
+    footer: "ASWAYZ Community تم التطوير بواسطة | ASWAYZ Music v1.2",
     ping: {
       description: "فحص تأخير البوت",
       response: "جاري قياس التأخير...",
@@ -255,7 +255,7 @@ module.exports = {
     support: {
       embed: {
           authorName: "سيرفر الدعم",
-          description: "➡️ **انضم إلى سيرفر Discord للدعم والتحديثات:**\n- Discord - {supportServerLink}\n\n➡️ **تابعنا على:**\n- GitHub - {githubLink}\n- Replit - {replitLink}\n- YouTube - {youtubeLink}",
+          description: "➡️ **انضم إلى سيرفر Discord للدعم والتحديثا",
           error: "خطأ",
           errorDescription: "- حدث خطأ أثناء معالجة طلبك."
       }
