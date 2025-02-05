@@ -16,7 +16,7 @@ async function sendMessageWithPermissionsCheck(channel, embed, attachment, actio
             !permissions.has(PermissionsBitField.Flags.EmbedLinks) ||
             !permissions.has(PermissionsBitField.Flags.AttachFiles) ||
             !permissions.has(PermissionsBitField.Flags.UseExternalEmojis)) {
-            console.error("Bot lacks necessary permissions to send messages in this channel.");
+            console.error("البوت ليس لديه صلاحية لإرسال الرسائل في هذا الروم.");
             return;
         }
 
