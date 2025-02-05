@@ -2,7 +2,7 @@
 
 module.exports = {
   TOKEN: "",
-  language: "en",
+  language: "ar",
   ownerID: ["968563794974478366", ""], 
   mongodbUri : "mongodb + sv://shiva:shiva@musicbotyt.ouljywv.mongodb.net/?retryWrites=true&w=majority",
   setupFilePath: './commands/setup.json',
