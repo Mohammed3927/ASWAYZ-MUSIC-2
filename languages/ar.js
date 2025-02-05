@@ -8,7 +8,7 @@ module.exports = {
         responseTime: "- وقت استجابة البوت: **{latency}ms**",
         websocketPing: "- تأخير WebSocket: **{ping}ms**",
         uptime: "- مدة التشغيل: **{uptime}**",
-        footer: "SSRR تم التطوير بواسطة | Prime Music v1.2"
+        footer: "ASWAYZ Community تم التطوير بواسطة | ASWAYZ Music v1.2"
       }
     },
     addsong: {
@@ -254,8 +254,8 @@ module.exports = {
     },
     support: {
       embed: {
-          authorName: "سيرفر الدعم",
-          description: "➡️ **انضم إلى سيرفر Discord للدعم والتحديثا",
+          authorName: "طريقة التواصل مع الدعم",
+          description: "➡️ **للدعم يرجى التوجه الى قسم التذاكر في السيرفر وفتح تذكرة من نوع ( شكوى على اداري )",
           error: "خطأ",
           errorDescription: "- حدث خطأ أثناء معالجة طلبك."
       }
