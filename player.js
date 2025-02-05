@@ -30,7 +30,7 @@ async function sendMessageWithPermissionsCheck(channel, embed, attachment, actio
         console.error("Error sending message:", error.message);
         const errorEmbed = new EmbedBuilder()
             .setColor('#FF0000')
-            .setDescription("⚠️ **Unable to send message. Check bot permissions.**");
+            .setDescription("⚠️ **لا املك صلاحية إرسال رسائل.**");
         await channel.send({ embeds: [errorEmbed] });
     }
 }
@@ -99,7 +99,7 @@ function initializePlayer(client) {
                 iconURL: musicIcons.playerIcon,
                 url: config.SupportServer
             })
-            .setFooter({ text: `Developed by SSRR | Prime Music v1.2`, iconURL: musicIcons.heartIcon })
+            .setFooter({ text: `Developed by ASWAYZ Community | ASWAYZ Music v1.2`, iconURL: musicIcons.heartIcon })
             .setTimestamp()
             .setDescription(  
                 `- **Title:** [${track.info.title}](${track.info.uri})\n` +
@@ -126,7 +126,7 @@ function initializePlayer(client) {
             console.error("Error creating or sending music card:", error.message);
             const errorEmbed = new EmbedBuilder()
                 .setColor('#FF0000')
-                .setDescription("⚠️ **Unable to load track card. Continuing playback...**");
+                .setDescription("⚠️ **تعذر تحميل صورة تشغيل الاغنية...**");
             await channel.send({ embeds: [errorEmbed] });
         }
     });
@@ -156,17 +156,17 @@ function initializePlayer(client) {
     
                 if (!nextTrack) {
                     player.destroy();
-                    await channel.send("⚠️ **No more tracks to autoplay. Disconnecting...**");
+                    await channel.send("⚠️ **لا توجد اغاني في الانتظار متبقية. جاري قطع الاتصال...**");
                 }
             } else {
-                console.log(`Autoplay is disabled for guild: ${guildId}`);
+                console.log(`التشغيل التلقائي متوقف للخادم: ${guildId}`);
                 player.destroy();
-                await channel.send("🎶 **Queue has ended. Autoplay is disabled.**");
+                await channel.send("🎶 **الاغنية انتهت. التشغيل التلقائي متوقف.**");
             }
         } catch (error) {
             console.error("Error handling autoplay:", error);
             player.destroy();
-            await channel.send("👾**Queue Empty! Disconnecting...**");
+            await channel.send("👾**لا توجد اغاني لتشغيلها! جاري قطع الاتصال...**");
         }
     });
     
@@ -240,7 +240,7 @@ async function handleInteraction(i, player, channel) {
             break;
         case 'skipTrack':
             player.stop();
-            await sendEmbed(channel, "⏭️ **Player will play the next song!**");
+            await sendEmbed(channel, "⏭️ **سيتم تشغيل الاغنية القادمة!**");
             break;
         case 'disableLoop':
             disableLoop(player, channel);
@@ -250,7 +250,7 @@ async function handleInteraction(i, player, channel) {
             break;
         case 'clearQueue':
             player.queue.clear();
-            await sendEmbed(channel, "🗑️ **Queue has been cleared!**");
+            await sendEmbed(channel, "🗑️ **تم حذف قائمة التشغيل!**");
             break;
         case 'stopTrack':
             player.stop();
@@ -259,18 +259,18 @@ async function handleInteraction(i, player, channel) {
             break;
         case 'pauseTrack':
             if (player.paused) {
-                await sendEmbed(channel, '⏸️ **Playback is already paused!**');
+                await sendEmbed(channel, '⏸️ **الاغنية متوقفة بالفعل!**');
             } else {
                 player.pause(true);
-                await sendEmbed(channel, '⏸️ **Playback has been paused!**');
+                await sendEmbed(channel, '⏸️ **تم ايقاف الاغنية!**');
             }
             break;
         case 'resumeTrack':
             if (!player.paused) {
-                await sendEmbed(channel, '▶️ **Playback is already resumed!**');
+                await sendEmbed(channel, '▶️ **الاغنية مستئنفة بالفعل!**');
             } else {
                 player.pause(false);
-                await sendEmbed(channel, '▶️ **Playback has been resumed!**');
+                await sendEmbed(channel, '▶️ **تم إستئناف الاغنية!**');
             }
             break;
         case 'volumeUp':
@@ -291,10 +291,10 @@ async function sendEmbed(channel, message) {
 function adjustVolume(player, channel, amount) {
     const newVolume = Math.min(100, Math.max(10, player.volume + amount));
     if (newVolume === player.volume) {
-        sendEmbed(channel, amount > 0 ? '🔊 **Volume is already at maximum!**' : '🔉 **Volume is already at minimum!**');
+        sendEmbed(channel, amount > 0 ? '🔊 **تم الوصول للحد الاقصى!**' : '🔉 **تم الوصول للحد الادني!**');
     } else {
         player.setVolume(newVolume);
-        sendEmbed(channel, `🔊 **Volume changed to ${newVolume}%!**`);
+        sendEmbed(channel, `🔊 **تم وضع مستوى الصوت ${newVolume}%!**`);
     }
 }
 
@@ -312,17 +312,17 @@ function formatTrack(track) {
 
 function toggleLoop(player, channel) {
     player.setLoop(player.loop === "track" ? "queue" : "track");
-    sendEmbed(channel, player.loop === "track" ? "🔁 **Track loop is activated!**" : "🔁 **Queue loop is activated!**");
+    sendEmbed(channel, player.loop === "track" ? "🔁 **تم تشغيل وضع إعادة الاغنية!**" : "🔁 **Queue loop is activated!**");
 }
 
 function disableLoop(player, channel) {
     player.setLoop("none");
-    sendEmbed(channel, "❌ **Loop is disabled!**");
+    sendEmbed(channel, "❌ **تم إيقاف وضع الإعادة!**");
 }
 
 function showQueue(channel) {
     if (queueNames.length === 0) {
-        sendEmbed(channel, "The queue is empty.");
+        sendEmbed(channel, "لا توجد اغاني لتشغيلها.");
         return;
     }
     const queueChunks = [];
@@ -344,7 +344,7 @@ function showQueue(channel) {
     queueChunks.forEach(async (chunk) => {
         const embed = new EmbedBuilder()
             .setColor(config.embedColor)
-            .setDescription(`📜 **Queue:**\n${chunk}`);
+            .setDescription(`📜 **الاغنية:**\n${chunk}`);
         await channel.send({ embeds: [embed] }).catch(console.error);
     });
 }
