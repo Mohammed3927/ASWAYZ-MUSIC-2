@@ -17,13 +17,13 @@ module.exports = {
      {
       name: "Koi Node V4",
       password: "saher.inzeworld.com",
-      host: "lava.inzeworld.com",
+      host: "lavahatry4.techbyte.host",
       port: 3128,
       secure: false
     },
     {
-      name: "INZEWORLD.COM",
-      password: "saher.inzeworld.com",
+      name: "ChalresNaig Node",
+      password: "NAIGLAVA-dash.techbyte.host",
       host: "lava.inzeworld.com",
       port: 3128,
       secure: false
