@@ -22,10 +22,10 @@ module.exports = {
       secure: false
     },
     {
-      name: "ChalresNaig Node",
-      password: "NAIGLAVA-dash.techbyte.host",
-      host: "lava.inzeworld.com",
-      port: 3128,
+      name: "Public Lavalink v4 NonSSL",
+      password: "https://dsc.gg/ajidevserver",
+      host: "lava-v4.ajieblogs.eu.org",
+      port: 80,
       secure: false
     }
   ]
